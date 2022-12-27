@@ -1,9 +1,9 @@
-function Goods() {
+function Goods(props) {
     return(
         <div className="goods-block">
-            <h3></h3>
-            <p></p>
-            <img src="" alt="" />
+            <h3>{props.goods[0].title}</h3>
+            <p>{props.goods[0].cost}</p>
+            <img src={props.goods[0].image} alt="" />
         </div>
     );
 }

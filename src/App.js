@@ -19,7 +19,7 @@ function App() {
       <Header />
       <TestFunctional data={funcData}/>
       <TestOOPStyle />
-      <Goods />
+      <Goods goods={goods}/>
     </div>
   );
 }
