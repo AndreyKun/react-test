@@ -1,10 +1,14 @@
 function Goods(props) {
     return(
-        <div className="goods-block">
-            <h3>{props.goods[0].title}</h3>
-            <p>{props.goods[0].cost}</p>
-            <img src={props.goods[0].image} alt="" />
-        </div>
+        <>
+            {props.goods.map(item =>
+                <div className="goods-block">
+                    <h3>{item.title}</h3>
+                    <p>{item.cost}</p>
+                    <img src={item.image} alt={item.title} />
+                </div>
+            )}
+        </>
     );
 }
 
