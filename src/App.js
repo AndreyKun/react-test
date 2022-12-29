@@ -1,25 +1,28 @@
 import './App.css';
 import Header from './header/Header';
-import TestFunctional from './TestFunctional';
-import TestOOPStyle from "./TestOOPStyle";
+import Main from './main/Main';
+import About from './about/About';
+import Users from './users/Users';
+import User from './users/User';
 import Goods from './goods/Goods';
+import Error from './error/Error';
 
-const funcData = {
-  test_text: 'Test component functional style'
-};
-
-const goods = [
-  {'title': 'apple', 'cost': 330, 'image': 'https://cdn0.iconfinder.com/data/icons/expenses-vs-income/30/__food_apple_grocery_gastronomy-512.png'},
-  {'title': 'pear', 'cost': 230, 'image': 'https://cdn3.iconfinder.com/data/icons/fruits-8/512/pear-512.png'}
-];
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <TestFunctional data={funcData}/>
-      <TestOOPStyle />
-      <Goods goods={goods}/>
+      <Router>
+        <Header />
+        <Routes>
+          <Route exact path="/" element={<Main />} />
+          <Route path="/about" element={<About />} />
+          <Route exact path="/users" element={<Users />} />
+          <Route path="/users/:userName" element={<User />} />
+          <Route path="/goods" element={<Goods />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+      </Router>
     </div>
   );
 }

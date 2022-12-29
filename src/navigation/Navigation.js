@@ -1,4 +1,6 @@
 import React from "react";
+import {NavLink} from "react-router-dom";
+import './Navigation.css';
 
 class Navigation extends React.Component {
     constructor(props) {
@@ -10,9 +12,10 @@ class Navigation extends React.Component {
             <nav>
                 <h1>{this.props.name}</h1>
                 <ul>
-                    <li>One</li>
-                    <li>Two</li>
-                    <li>Three</li>
+                    <li><NavLink to="/">Main</NavLink></li>
+                    <li><NavLink to="/about">About</NavLink></li>
+                    <li><NavLink to="/users">Users</NavLink></li>
+                    <li><NavLink to="/goods">Goods</NavLink></li>
                 </ul>
             </nav>
         );
